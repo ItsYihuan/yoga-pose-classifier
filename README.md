@@ -1,6 +1,6 @@
-# yoga-pose-detection
+# yoga-pose-classifier
 
-Brief description of your project.
+This is a mini project for learning Node.js and extending the Yoga Classify model.
 
 ## Prerequisites
 
