@@ -2,22 +2,28 @@
 
 let selectedFile;
 
-// Event listener for file input change
-document.getElementById('fileInput').addEventListener('change', function (event) {
-    selectedFile = event.target.files[0];
-    displayImagePreview(selectedFile);
-    document.getElementById('classifyButton').style.display = 'block';
+document.addEventListener("DOMContentLoaded", function() {
+    const fileInput = document.getElementById("fileInput");
+    const imagePreview = document.getElementById("imagePreview");
+    
+    // Event listener for file input change
+    fileInput.addEventListener("change", function() {
+        const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                selectedFile = file;
+                imagePreview.src = e.target.result;
+                imagePreview.style.display = "block"; // Display the image
+                document.getElementById('classifyButton').removeAttribute('disabled');
+            }
+            reader.readAsDataURL(file);
+        } else {
+            imagePreview.src = "";
+            imagePreview.style.display = "none"; // Hide the image if no file selected
+        }
+    });
 });
-
-// Display image preview
-function displayImagePreview(file) {
-    const imagePreview = document.getElementById('imagePreview');
-    const reader = new FileReader();
-    reader.onload = function (event) {
-        imagePreview.src = event.target.result;
-    };
-    reader.readAsDataURL(file);
-}
 
 // Event listener for classify button click
 document.getElementById('classifyButton').addEventListener('click', function () {
