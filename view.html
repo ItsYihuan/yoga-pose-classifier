@@ -11,9 +11,10 @@
   <body>
     <div class="container">
       <h1>Yoga Pose Classifier</h1>
+      <label for="fileInput" class="custom-file-upload">Upload Image</label>
       <input type="file" id="fileInput">
-      <button id="classifyButton" style="display: none;">Classify Image</button>
-      <div id="result"></div>
+      <button id="classifyButton" disabled >Classify Image</button>
+      <div id="result">Predicted Pose: </div>
       <img src="#" id="imagePreview" class="image-preview" alt="Image Preview">
     </div>
   </body>
