@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga Pose Classifier</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+    <script src="./classifier.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Yoga Pose Classifier</h1>
+      <input type="file" id="fileInput">
+      <button id="classifyButton" style="display: none;">Classify Image</button>
+      <div id="result"></div>
+      <img src="#" id="imagePreview" class="image-preview" alt="Image Preview">
+    </div>
+  </body>
+</html>
